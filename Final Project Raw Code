@@ -384,7 +384,10 @@ if __name__ == "__main__":
         game.setup_players()
         root.deiconify()
         game.start()
-    else:
+    elif version is None:
+        sys.exit()
+    elif version != "K-2" or version != "3-5" or version != "6-8":
         messagebox.showerror("Invalid input", "Please enter a valid input (K-2, 3-5, or 6-8)")
+        sys.exit()
 
     root.mainloop()
